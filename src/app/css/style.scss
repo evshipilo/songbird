@@ -1,10 +1,28 @@
 
 @import 'fonts';
 
-.root {
+body{
+ // background-color: lightsalmon;
   font-family: Roboto-Regular;
+  //font-size: 10px;
 }
 
-.container{
-  background-color: rgba(31, 111, 84, 0.4);
+.song-bird__container{
+  & .logo{
+    padding: 0 20px;
+    & h1{
+      display: inline-block;
+      font-family: Playball-Regular;
+      color: rgba(0, 0, 255, 0.4);
+      & img{
+        width: 40px;
+        vertical-align: sub;
+      }
+    }
+
+  }
+
+
 }
+
+
