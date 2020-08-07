@@ -11,7 +11,7 @@ body{
   & .logo{
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
 
     padding: 0 20px;
@@ -39,9 +39,22 @@ body{
     flex-wrap: wrap;
     align-items: center;
     & img{
-      height: 50px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 50px;
+    }
+    .question-audio{
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      & .question-audio-player{
+        border: none;
+        width: 100%;
+      }
     }
   }
+
+
 
 
 }

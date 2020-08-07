@@ -2,34 +2,44 @@ import {action, computed, decorate, observable} from "mobx";
 import {createContext} from "react";
 
 class Store {
-  score= 0
-  birdsClass=0
+  @observable score = 0
 
+  // @computed get superScore() {
+  //   return this.score + 100
+  // }
 
-  get superScore(){
-    return this.score+100
+  @action increaseScore() {
+    this.score += 1
   }
 
-  increaseBirdsClass(){
-    this.birdsClass+=1
+  @observable songClass = 0
+
+  @action increaseBirdsClass() {
+    this.songClass += 1
   }
 
-  increaseScore(){
-    this.score+=1
+  @observable rightAnswer = false
+
+  @action setRightAnswer(bool) {
+    this.rightAnswer = bool
   }
+
+
 
 }
 
-decorate(Store,{
-  score: observable,
-  birdsClass: observable,
-  superScore: computed,
-  increaseScore: action,
-  changeTab: action,
+// decorate(Store, {
+//   score: observable,
+//   birdsClass: observable,
+//   rightAnswer: observable,
+//   superScore: computed,
+//   increaseScore: action,
+//   changeTab: action,
+//   setRightAnswer: action,
+//
+// })
 
-})
 
-
-export const store=new Store()
-export const StoreContext=createContext()
+export const store = new Store()
+export const StoreContext = createContext()
 

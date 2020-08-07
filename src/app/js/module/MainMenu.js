@@ -18,7 +18,7 @@ export const MainMenu = observer(() => {
     <Tabs
       className='bird-classes-tabs'
       variant='scrollable'
-      value={store.birdsClass}
+      value={store.songClass}
       indicatorColor="primary"
       textColor="primary"
       aria-label="disabled tabs example"

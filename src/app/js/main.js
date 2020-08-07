@@ -11,40 +11,54 @@ import {store, StoreContext} from "./module/Store";
 import {QuestionCard} from "./module/QuestionCard";
 
 
-function App(){
+function App() {
 
-    return (
-      <StoreContext.Provider value={store}>
-        <Container
-          className='song-bird__container'
-          maxWidth="lg">
-          <Grid
-            container
-            spacing={2}
-          >
-            <Grid item xs={12}>
-              <Paper className='logo'>
-
-                <h1>
-                  <span>sound</span>found</h1>
-                <Score
-                />
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper>
-                <MainMenu/>
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper>
-                <QuestionCard/>
-              </Paper>
-            </Grid>
+  return (
+    <StoreContext.Provider value={store}>
+      <Container
+        className='song-bird__container'
+        maxWidth="lg">
+        <Grid
+          container
+          spacing={2}
+        >
+          <Grid item xs={12}>
+            <Paper className='logo'>
+              <h1>
+                <span>sound</span>found</h1>
+              <Score
+              />
+            </Paper>
           </Grid>
-        </Container>
-      </StoreContext.Provider>
-    )
+          <Grid item xs={12}>
+            <Paper>
+              <MainMenu/>
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper>
+              <QuestionCard/>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Paper>
+              1
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Paper>
+              <VariantsList/>
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper>
+              next
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    </StoreContext.Provider>
+  )
 }
 
 ReactDOM.render(<App/>, document.querySelector('.root'))
