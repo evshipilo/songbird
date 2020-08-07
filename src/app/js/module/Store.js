@@ -4,26 +4,45 @@ import {createContext} from "react";
 class Store {
   @observable score = 0
 
-  // @computed get superScore() {
-  //   return this.score + 100
-  // }
-
   @action increaseScore() {
     this.score += 1
   }
 
+//-----------------------------------------------
   @observable songClass = 0
 
-  @action increaseBirdsClass() {
+  @action increaseSongsClass() {
     this.songClass += 1
   }
 
-  @observable rightAnswer = false
+//-----------------------------------------------
+  @observable isRightAnswer = false
 
-  @action setRightAnswer(bool) {
-    this.rightAnswer = bool
+  @action setIsRightAnswer(bool) {
+    this.isRightAnswer = bool
   }
 
+//-----------------------------------------------
+  @observable arrayOfAnswers = []
+
+  @action addToArrayOfAnswers(num) {
+    this.arrayOfAnswers.push(num)
+    this.isRightAnswer = (num === this.rightAnswer)
+  }
+
+  @action clearArrayOfAnswers() {
+    this.arrayOfAnswers = []
+  }
+
+//-----------------------------------------------
+  @observable rightAnswer = null
+
+  @action setRightAnswer() {
+    this.rightAnswer = Math.round(-0.5 + Math.random() * (5 + 1))
+  }
+
+
+//-----------------------------------------------
 
 
 }

@@ -11,14 +11,14 @@ export const QuestionCard = observer(() => {
   return (
     <div className='question-card'>
       <div className='question-image'>
-        {store.rightAnswer?
+        {store.isRightAnswer?
           <img src="https://raw.githubusercontent.com/evshipilo/soundFoundDATA/master/Blur.jpg" alt="img"/>
           :
           <img src={question} alt="question"/>
         }
       </div>
       <div className='question-audio'>
-        {store.rightAnswer?
+        {store.isRightAnswer?
           <h1>{SongsData[0][0].name}</h1>
         :
           <h1>***</h1>

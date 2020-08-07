@@ -265,7 +265,7 @@ export const SongsData = [
   ],
 ];
 
-export const songClasses=[
+export const SongsClass=[
   'Разминка','Инди-рок','Микс 1',
   'Хард-рок','Микс 2','Панк-рок']
 

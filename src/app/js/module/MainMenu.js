@@ -3,11 +3,11 @@ import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import {StoreContext} from "./Store";
 import {observer} from "mobx-react";
-import {songClasses} from "./SongsData";
+import {SongsClass} from "./SongsData";
 
 export const MainMenu = observer(() => {
   const store = useContext(StoreContext)
-  const myTabs = songClasses.map((songClass, number) =>
+  const myTabs = SongsClass.map((songClass, number) =>
     <Tab
       key={songClass}
       label={songClass}
