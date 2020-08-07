@@ -17,14 +17,30 @@ body{
     padding: 0 20px;
     & h1{
       display: inline-block;
-      font-family: Playball-Regular;
+      font-family: LuckiestGuy-Regular;
       color: rgba(0, 0, 255, 0.4);
-      & img{
-        width: 40px;
-        vertical-align: sub;
+      & span{
+        color: rgba(255, 0, 0, 0.49);
       }
     }
 
+  }
+  .bird-classes-tabs{
+    & button{
+      cursor: auto;
+    }
+    & .MuiTabs-flexContainer{
+      justify-content: space-between;
+    }
+  }
+  .question-card{
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    & img{
+      height: 50px;
+    }
   }
 
 

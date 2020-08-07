@@ -3,14 +3,15 @@ import {createContext} from "react";
 
 class Store {
   score= 0
-  tabValue=0
+  birdsClass=0
+
 
   get superScore(){
     return this.score+100
   }
 
-  changeTab(num){
-    this.tabValue=num
+  increaseBirdsClass(){
+    this.birdsClass+=1
   }
 
   increaseScore(){
@@ -21,7 +22,7 @@ class Store {
 
 decorate(Store,{
   score: observable,
-  tabValue: observable,
+  birdsClass: observable,
   superScore: computed,
   increaseScore: action,
   changeTab: action,

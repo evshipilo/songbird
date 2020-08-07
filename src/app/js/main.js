@@ -1,6 +1,5 @@
 import '../css/style.scss'
-import Bird from '../img/bird.svg'
-import React, {Component} from "react"
+import React from "react"
 import ReactDOM from 'react-dom'
 import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid";
@@ -9,6 +8,7 @@ import {Score} from "./module/Score";
 import {MainMenu} from "./module/MainMenu";
 import 'mobx-react-lite/batchingForReactDom'
 import {store, StoreContext} from "./module/Store";
+import {QuestionCard} from "./module/QuestionCard";
 
 
 function App(){
@@ -26,8 +26,7 @@ function App(){
               <Paper className='logo'>
 
                 <h1>
-                  <img src={Bird} alt="bird"/>
-                  SongBird</h1>
+                  <span>sound</span>found</h1>
                 <Score
                 />
               </Paper>
@@ -35,6 +34,11 @@ function App(){
             <Grid item xs={12}>
               <Paper>
                 <MainMenu/>
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper>
+                <QuestionCard/>
               </Paper>
             </Grid>
           </Grid>

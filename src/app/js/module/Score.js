@@ -8,8 +8,6 @@ export const Score = observer(() => {
     <span
       className='score'>
     Score:{` ${store.score}`}
-
-
   </span>
   )
 
