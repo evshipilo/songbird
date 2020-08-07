@@ -1,9 +1,10 @@
-import React, {Component, useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import {StoreContext} from "./Store";
 import {observer} from "mobx-react";
 
 export const Score = observer(() => {
-  const store = React.useContext(StoreContext)
+  const store = useContext(StoreContext)
+  useEffect(()=>store.increaseScore(),[store.isRightAnswer])
   return (
     <span
       className='score'>

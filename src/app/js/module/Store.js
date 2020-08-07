@@ -5,7 +5,7 @@ class Store {
   @observable score = 0
 
   @action increaseScore() {
-    this.score += 1
+   if(this.isRightAnswer) this.score += 6-this.arrayOfAnswers.length
   }
 
 //-----------------------------------------------
@@ -26,7 +26,7 @@ class Store {
   @observable arrayOfAnswers = []
 
   @action addToArrayOfAnswers(num) {
-    this.arrayOfAnswers.push(num)
+    if (!this.arrayOfAnswers.includes(num)) this.arrayOfAnswers.push(num)
     this.isRightAnswer = (num === this.rightAnswer)
   }
 
@@ -41,6 +41,12 @@ class Store {
     this.rightAnswer = Math.round(-0.5 + Math.random() * (5 + 1))
   }
 
+//-----------------------------------------------
+  @observable clickedListItem=null
+
+  @action setClickedListItem(num){
+    this.clickedListItem=num
+  }
 
 //-----------------------------------------------
 

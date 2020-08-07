@@ -10,6 +10,7 @@ import 'mobx-react-lite/batchingForReactDom'
 import {store, StoreContext} from "./module/Store";
 import {QuestionCard} from "./module/QuestionCard";
 import {VariantsList} from "./module/VariantsList";
+import {AnswerCard} from "./module/AnswerCard";
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper>
-             2
+             <AnswerCard/>
             </Paper>
           </Grid>
           <Grid item xs={12}>
