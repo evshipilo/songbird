@@ -20,7 +20,8 @@ export const QuestionCard = observer(() => {
       </div>
       <div className='question-audio'>
         {store.isRightAnswer?
-          <h1>{SongsData[store.songClass][store.rightAnswer]?.name}</h1>
+         <> <h1>{SongsData[store.songClass][store.rightAnswer]?.name}</h1>
+          <h3>song: {SongsData[store.songClass][store.rightAnswer]?.id}</h3></>
         :
           <h1>***</h1>
         }
