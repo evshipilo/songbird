@@ -6,13 +6,32 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+
 
 export const VariantsList = observer(() => {
   const store = useContext(StoreContext)
+  const
+    url = 'https://raw.githubusercontent.com/evshipilo/soundFoundDATA/master/'
 
   useEffect(() => store.setRightAnswer(), [])
   console.log("-> store.rightAnswer", store.rightAnswer);
   console.log("-> store", store.arrayOfAnswers);
+
+  function playSound() {
+    if (store.isRightAnswer) {
+      store.audioFromQuestionCard?.pause()
+      store.audioFromAnswerCard?.pause()
+      let audio = new Audio(url + 'Success.mp3')
+      audio.play().then(r => null)
+    }
+    else {
+      let audio = new Audio(url + 'Mistake.mp3')
+      audio.play().then(r => null)
+    }
+  }
 
   const myList = SongsData[store.songClass].map((author, num) =>
     <div key={author.name}>
@@ -24,13 +43,28 @@ export const VariantsList = observer(() => {
           () => {
             store.addToArrayOfAnswers(num)
             store.setClickedListItem(num)
+            playSound()
           }
         }
       >
         {store.arrayOfAnswers.includes(num) ?
-          num === store.rightAnswer ? <span>green</span> : <span>red</span>
+          num === store.rightAnswer ?
+            <CheckCircleOutlineIcon
+              className='variant-icon'
+              fontSize="small"
+              color="action"/>
+            :
+            <RemoveCircleOutlineIcon
+              className='variant-icon'
+              fontSize="small"
+              color="secondary"
+            />
           :
-          <span>grey</span>
+          <HelpOutlineIcon
+            className='variant-icon'
+            fontSize="small"
+            color="primary"
+          />
 
         }
         <ListItemText

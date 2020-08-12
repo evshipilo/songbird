@@ -5,7 +5,7 @@ class Store {
   @observable score = 0
 
   @action increaseScore() {
-   if(this.isRightAnswer) this.score += 6-this.arrayOfAnswers.length
+    if (this.isRightAnswer) this.score += 6 - this.arrayOfAnswers.length
   }
 
 //-----------------------------------------------
@@ -42,28 +42,29 @@ class Store {
   }
 
 //-----------------------------------------------
-  @observable clickedListItem=null
+  @observable clickedListItem = null
 
-  @action setClickedListItem(num){
-    this.clickedListItem=num
+  @action setClickedListItem(num) {
+    this.clickedListItem = num
+  }
+
+//-----------------------------------------------
+  @observable audioFromAnswerCard = null
+
+  @action getAudioFromAnswerCard(audio) {
+    this.audioFromAnswerCard = audio
+  }
+
+//-----------------------------------------------
+  @observable audioFromQuestionCard = null
+
+  @action getAudioFromQuestionCard(audio) {
+    this.audioFromQuestionCard = audio
   }
 
 //-----------------------------------------------
 
-
 }
-
-// decorate(Store, {
-//   score: observable,
-//   birdsClass: observable,
-//   rightAnswer: observable,
-//   superScore: computed,
-//   increaseScore: action,
-//   changeTab: action,
-//   setRightAnswer: action,
-//
-// })
-
 
 export const store = new Store()
 export const StoreContext = createContext()
