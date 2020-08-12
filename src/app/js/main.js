@@ -11,6 +11,7 @@ import {store, StoreContext} from "./module/Store";
 import {QuestionCard} from "./module/QuestionCard";
 import {VariantsList} from "./module/VariantsList";
 import {AnswerCard} from "./module/AnswerCard";
+import {Next} from "./module/Next";
 
 
 
@@ -54,9 +55,7 @@ function App() {
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <Paper>
-              next
-            </Paper>
+            <Next/>
           </Grid>
         </Grid>
       </Container>

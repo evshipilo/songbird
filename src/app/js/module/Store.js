@@ -11,10 +11,6 @@ class Store {
 //-----------------------------------------------
   @observable songClass = 0
 
-  @action increaseSongsClass() {
-    this.songClass += 1
-  }
-
 //-----------------------------------------------
   @observable isRightAnswer = false
 
@@ -63,6 +59,16 @@ class Store {
   }
 
 //-----------------------------------------------
+
+  @action nextRound(){
+    this.songClass+=1
+    this.isRightAnswer = false
+    this.arrayOfAnswers = []
+    this.setRightAnswer()
+    this.clickedListItem = null
+    this.audioFromAnswerCard = null
+    this.audioFromQuestionCard = null
+  }
 
 }
 
