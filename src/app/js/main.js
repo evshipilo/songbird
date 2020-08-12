@@ -55,7 +55,8 @@ function App() {
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <Next/>
+            <Next
+            />
           </Grid>
         </Grid>
       </Container>

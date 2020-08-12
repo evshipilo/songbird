@@ -17,8 +17,8 @@ export const VariantsList = observer(() => {
     url = 'https://raw.githubusercontent.com/evshipilo/soundFoundDATA/master/'
 
   useEffect(() => store.setRightAnswer(), [])
-  console.log("-> store.rightAnswer", store.rightAnswer);
-  console.log("-> store", store.arrayOfAnswers);
+  console.log("-> rightAnswer", store.rightAnswer);
+  //console.log("-> store", store.arrayOfAnswers);
 
   function playSound() {
     if (store.isRightAnswer) {

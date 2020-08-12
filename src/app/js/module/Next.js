@@ -8,6 +8,7 @@ export const Next = observer(() => {
   return (
     store.isRightAnswer ?
       <Button
+        className='next-btn'
         variant="contained"
         color="primary"
         onClick={()=>store.nextRound()}
@@ -16,6 +17,7 @@ export const Next = observer(() => {
       </Button>
       :
       <Button
+        className='next-btn'
         variant="contained"
         disabled
       >
