@@ -70,6 +70,27 @@ class Store {
     this.audioFromQuestionCard = null
   }
 
+  @action nextGame(){
+    this.songClass=0
+    this.isRightAnswer = false
+    this.arrayOfAnswers = []
+    this.setRightAnswer()
+    this.clickedListItem = null
+    this.audioFromAnswerCard = null
+    this.audioFromQuestionCard = null
+    this.score = 0
+  }
+
+//-----------------------------------------------
+
+  @observable showModal=false
+
+  @action setShowModal(bool){
+    this.showModal=bool
+  }
+
+
+
 }
 
 export const store = new Store()

@@ -5,6 +5,7 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import question from '../../img/question.svg'
 import {SongsData} from "./SongsData";
+import {CSSTransition, SwitchTransition} from "react-transition-group";
 
 export const QuestionCard = observer(() => {
   const store = useContext(StoreContext)
@@ -13,14 +14,24 @@ export const QuestionCard = observer(() => {
 
   return (
     <div className='question-card'>
-      <div className='question-image'>
-        {store.isRightAnswer ?
-          <img src={url + SongsData[store.songClass][store.rightAnswer]?.image}
-               alt="img"/>
-          :
-          <img src={question} alt="question"/>
-        }
-      </div>
+
+        <SwitchTransition mode="out-in">
+        <CSSTransition
+          classNames='image-transition'
+          key={store.isRightAnswer ? 'aa':'bb'
+          }
+          addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
+        >
+          {
+            store.isRightAnswer ?
+              <img src={url + SongsData[store.songClass][store.rightAnswer]?.image}
+                   alt="img"/>
+              :
+              <img src={question} alt="question"/>
+          }
+        </CSSTransition>
+        </SwitchTransition>
+
       <div className='question-audio'>
         {store.isRightAnswer ?
           <> <h1>{SongsData[store.songClass][store.rightAnswer]?.name}</h1>

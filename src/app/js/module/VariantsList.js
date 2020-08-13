@@ -18,7 +18,6 @@ export const VariantsList = observer(() => {
 
   useEffect(() => store.setRightAnswer(), [])
   console.log("-> rightAnswer", store.rightAnswer);
-  //console.log("-> store", store.arrayOfAnswers);
 
   function playSound() {
     if (store.isRightAnswer) {

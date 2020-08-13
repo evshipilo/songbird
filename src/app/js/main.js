@@ -12,6 +12,7 @@ import {QuestionCard} from "./module/QuestionCard";
 import {VariantsList} from "./module/VariantsList";
 import {AnswerCard} from "./module/AnswerCard";
 import {Next} from "./module/Next";
+import {Modal} from "./module/Modal";
 
 
 
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <StoreContext.Provider value={store}>
+      <Modal/>
       <Container
         className='song-bird__container'
         maxWidth="lg">
@@ -40,6 +42,10 @@ function App() {
             </Paper>
           </Grid>
           <Grid item xs={12}>
+            <Next
+            />
+          </Grid>
+          <Grid item xs={12}>
             <Paper>
               <QuestionCard/>
             </Paper>
@@ -53,10 +59,6 @@ function App() {
             <Paper>
              <AnswerCard/>
             </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Next
-            />
           </Grid>
         </Grid>
       </Container>
