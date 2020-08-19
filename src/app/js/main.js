@@ -12,7 +12,7 @@ import {QuestionCard} from "./module/QuestionCard";
 import {VariantsList} from "./module/VariantsList";
 import {AnswerCard} from "./module/AnswerCard";
 import {Next} from "./module/Next";
-import {Modal} from "./module/Modal";
+import {EndGameDialog} from "./module/EndGameDialog";
 
 
 
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <StoreContext.Provider value={store}>
-      <Modal/>
+      <EndGameDialog/>
       <Container
         className='song-bird__container'
         maxWidth="lg">

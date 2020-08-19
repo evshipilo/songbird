@@ -7,7 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import HelpOutlineIcon from '@material-ui/icons/HelpRounded';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 
 
@@ -17,7 +17,7 @@ export const VariantsList = observer(() => {
     url = 'https://raw.githubusercontent.com/evshipilo/soundFoundDATA/master/'
 
   useEffect(() => store.setRightAnswer(), [])
-  console.log("-> rightAnswer", store.rightAnswer);
+  console.log("-> rightAnswer", store.rightAnswer+1);
 
   function playSound() {
     if (store.isRightAnswer) {

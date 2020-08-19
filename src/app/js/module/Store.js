@@ -60,8 +60,8 @@ class Store {
 
 //-----------------------------------------------
 
-  @action nextRound(){
-    this.songClass+=1
+  @action nextRound() {
+    this.songClass += 1
     this.isRightAnswer = false
     this.arrayOfAnswers = []
     this.setRightAnswer()
@@ -70,8 +70,9 @@ class Store {
     this.audioFromQuestionCard = null
   }
 
-  @action nextGame(){
-    this.songClass=0
+  @action nextGame() {
+    this.showModal = false
+    this.songClass = 0
     this.isRightAnswer = false
     this.arrayOfAnswers = []
     this.setRightAnswer()
@@ -83,12 +84,12 @@ class Store {
 
 //-----------------------------------------------
 
-  @observable showModal=false
+  @observable showModal = false
 
-  @action setShowModal(bool){
-    this.showModal=bool
+  @action setShowModal(bool) {
+    this.showModal = bool
   }
-
+//-----------------------------------------------
 
 
 }
