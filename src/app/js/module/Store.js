@@ -35,6 +35,7 @@ class Store {
 
   @action setRightAnswer() {
     this.rightAnswer = Math.round(-0.5 + Math.random() * (5 + 1))
+    console.log("-> rightAnswer", this.rightAnswer + 1)
   }
 
 //-----------------------------------------------

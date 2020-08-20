@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import {StoreContext} from "./Store";
@@ -13,6 +13,8 @@ export const MainMenu = observer(() => {
       label={songClass}
       />
   )
+
+  useEffect(() => store.setRightAnswer(),[])
 
   return (
     <Tabs

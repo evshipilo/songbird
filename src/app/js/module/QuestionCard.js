@@ -37,11 +37,7 @@ export const QuestionCard = observer(() => {
           <> <h1>{SongsData[store.songClass][store.rightAnswer]?.name}</h1>
             <h3>song: {SongsData[store.songClass][store.rightAnswer]?.id}</h3></>
           :
-          <h1>***<button onClick={()=>{
-            console.log("-> store.showModal", store.showModal);
-            store.setShowModal(!store.showModal)
-          }}
-          >---</button></h1>
+          <h1>***</h1>
         }
         <AudioPlayer
           className='question-audio-player'

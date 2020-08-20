@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext} from "react";
 import {observer} from "mobx-react";
 import {SongsClass, SongsData} from "./SongsData";
 import {StoreContext} from "./Store";
@@ -15,9 +15,6 @@ export const VariantsList = observer(() => {
   const store = useContext(StoreContext)
   const
     url = 'https://raw.githubusercontent.com/evshipilo/soundFoundDATA/master/'
-
-  useEffect(() => store.setRightAnswer(), [])
-  console.log("-> rightAnswer", store.rightAnswer+1);
 
   function playSound() {
     if (store.isRightAnswer) {

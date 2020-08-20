@@ -26,7 +26,7 @@ export const EndGameDialog = observer(() => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={store.nextGame()} color="primary" autoFocus>
+        <Button onClick={()=>store.nextGame()} color="primary" autoFocus>
           NEW GAME
         </Button>
       </DialogActions>
