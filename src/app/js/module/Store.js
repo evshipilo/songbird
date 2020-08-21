@@ -1,5 +1,5 @@
-import {action, computed, decorate, observable} from "mobx";
-import {createContext} from "react";
+import { action, observable } from 'mobx'
+import { createContext } from 'react'
 
 class Store {
   @observable score = 0
@@ -8,17 +8,17 @@ class Store {
     if (this.isRightAnswer) this.score += 6 - this.arrayOfAnswers.length
   }
 
-//-----------------------------------------------
+  // -----------------------------------------------
   @observable songClass = 0
 
-//-----------------------------------------------
+  // -----------------------------------------------
   @observable isRightAnswer = false
 
   @action setIsRightAnswer(bool) {
     this.isRightAnswer = bool
   }
 
-//-----------------------------------------------
+  // -----------------------------------------------
   @observable arrayOfAnswers = []
 
   @action addToArrayOfAnswers(num) {
@@ -30,36 +30,36 @@ class Store {
     this.arrayOfAnswers = []
   }
 
-//-----------------------------------------------
+  // -----------------------------------------------
   @observable rightAnswer = null
 
   @action setRightAnswer() {
     this.rightAnswer = Math.round(-0.5 + Math.random() * (5 + 1))
-    console.log("-> rightAnswer", this.rightAnswer + 1)
+    console.log('-> rightAnswer', this.rightAnswer + 1)
   }
 
-//-----------------------------------------------
+  // -----------------------------------------------
   @observable clickedListItem = null
 
   @action setClickedListItem(num) {
     this.clickedListItem = num
   }
 
-//-----------------------------------------------
-  @observable audioFromAnswerCard = null
+  // -----------------------------------------------
+  @observable audioFromAnswerCard = new Audio()
 
   @action getAudioFromAnswerCard(audio) {
     this.audioFromAnswerCard = audio
   }
 
-//-----------------------------------------------
-  @observable audioFromQuestionCard = null
+  // -----------------------------------------------
+  @observable audioFromQuestionCard = new Audio()
 
   @action getAudioFromQuestionCard(audio) {
     this.audioFromQuestionCard = audio
   }
 
-//-----------------------------------------------
+  // -----------------------------------------------
 
   @action nextRound() {
     this.songClass += 1
@@ -67,8 +67,8 @@ class Store {
     this.arrayOfAnswers = []
     this.setRightAnswer()
     this.clickedListItem = null
-    this.audioFromAnswerCard = null
-    this.audioFromQuestionCard = null
+    this.audioFromAnswerCard = new Audio()
+    this.audioFromQuestionCard = new Audio()
   }
 
   @action nextGame() {
@@ -78,23 +78,20 @@ class Store {
     this.arrayOfAnswers = []
     this.setRightAnswer()
     this.clickedListItem = null
-    this.audioFromAnswerCard = null
-    this.audioFromQuestionCard = null
+    this.audioFromAnswerCard = new Audio()
+    this.audioFromQuestionCard = new Audio()
     this.score = 0
   }
 
-//-----------------------------------------------
+  // -----------------------------------------------
 
   @observable showModal = false
 
   @action setShowModal(bool) {
     this.showModal = bool
   }
-//-----------------------------------------------
-
-
+  // -----------------------------------------------
 }
 
 export const store = new Store()
 export const StoreContext = createContext()
-

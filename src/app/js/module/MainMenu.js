@@ -1,9 +1,9 @@
-import React, {useContext, useEffect} from "react";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
-import {StoreContext} from "./Store";
-import {observer} from "mobx-react";
-import {SongsClass} from "./SongsData";
+import React, { useContext, useEffect } from 'react'
+import Tab from '@material-ui/core/Tab'
+import Tabs from '@material-ui/core/Tabs'
+import { StoreContext } from './Store'
+import { observer } from 'mobx-react'
+import { SongsClass } from './SongsData'
 
 export const MainMenu = observer(() => {
   const store = useContext(StoreContext)
@@ -11,10 +11,10 @@ export const MainMenu = observer(() => {
     <Tab
       key={songClass}
       label={songClass}
-      />
+    />
   )
 
-  useEffect(() => store.setRightAnswer(),[])
+  useEffect(() => store.setRightAnswer(), [])
 
   return (
     <Tabs

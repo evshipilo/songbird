@@ -1,11 +1,11 @@
-import React, {createRef, useContext} from "react";
-import {observer} from "mobx-react";
-import {StoreContext} from "./Store";
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+import React, { createRef, useContext } from 'react'
+import { observer } from 'mobx-react'
+import { StoreContext } from './Store'
+import AudioPlayer from 'react-h5-audio-player'
+import 'react-h5-audio-player/lib/styles.css'
 import question from '../../img/question.svg'
-import {SongsData} from "./SongsData";
-import {CSSTransition, SwitchTransition} from "react-transition-group";
+import { SongsData } from './SongsData'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 export const QuestionCard = observer(() => {
   const store = useContext(StoreContext)
@@ -15,29 +15,27 @@ export const QuestionCard = observer(() => {
   return (
     <div className='question-card'>
 
-        <SwitchTransition mode="out-in">
+      <SwitchTransition mode="out-in">
         <CSSTransition
           classNames='image-transition'
-          key={store.isRightAnswer ? 'aa':'bb'
+          key={store.isRightAnswer ? 'aa' : 'bb'
           }
-          addEndListener={(node, done) => node.addEventListener("transitionend", done, false)}
+          addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
         >
           {
-            store.isRightAnswer ?
-              <img src={url + SongsData[store.songClass][store.rightAnswer]?.image}
-                   alt="img"/>
-              :
-              <img src={question} alt="question"/>
+            store.isRightAnswer
+              ? <img src={url + SongsData[store.songClass][store.rightAnswer]?.image}
+                alt="img"/>
+              : <img src={question} alt="question"/>
           }
         </CSSTransition>
-        </SwitchTransition>
+      </SwitchTransition>
 
       <div className='question-audio'>
-        {store.isRightAnswer ?
-          <> <h1>{SongsData[store.songClass][store.rightAnswer]?.name}</h1>
+        {store.isRightAnswer
+          ? <> <h1>{SongsData[store.songClass][store.rightAnswer]?.name}</h1>
             <h3>song: {SongsData[store.songClass][store.rightAnswer]?.id}</h3></>
-          :
-          <h1>***</h1>
+          : <h1>***</h1>
         }
         <AudioPlayer
           className='question-audio-player'
@@ -47,7 +45,7 @@ export const QuestionCard = observer(() => {
           autoPlayAfterSrcChange={false}
           onPlay={() => {
             store.getAudioFromQuestionCard(player.current.audio.current)
-            store.audioFromAnswerCard?.pause()
+            store.audioFromAnswerCard.pause()
           }}
         />
 

@@ -1,23 +1,20 @@
 import '../css/style.scss'
-import React from "react"
+import React from 'react'
 import ReactDOM from 'react-dom'
-import Container from "@material-ui/core/Container"
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import {Score} from "./module/Score";
-import {MainMenu} from "./module/MainMenu";
+import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import { Score } from './module/Score'
+import { MainMenu } from './module/MainMenu'
 import 'mobx-react-lite/batchingForReactDom'
-import {store, StoreContext} from "./module/Store";
-import {QuestionCard} from "./module/QuestionCard";
-import {VariantsList} from "./module/VariantsList";
-import {AnswerCard} from "./module/AnswerCard";
-import {Next} from "./module/Next";
-import {EndGameDialog} from "./module/EndGameDialog";
-
-
+import { store, StoreContext } from './module/Store'
+import { QuestionCard } from './module/QuestionCard'
+import { VariantsList } from './module/VariantsList'
+import { AnswerCard } from './module/AnswerCard'
+import { Next } from './module/Next'
+import { EndGameDialog } from './module/EndGameDialog'
 
 function App() {
-
   return (
     <StoreContext.Provider value={store}>
       <EndGameDialog/>
@@ -57,7 +54,7 @@ function App() {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper>
-             <AnswerCard/>
+              <AnswerCard/>
             </Paper>
           </Grid>
         </Grid>
